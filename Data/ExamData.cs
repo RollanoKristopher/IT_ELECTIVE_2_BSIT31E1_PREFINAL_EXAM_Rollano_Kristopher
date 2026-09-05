@@ -86,8 +86,27 @@ namespace ExamMVC.Data
                 },
                 CorrectLetter = "B - appsettings.json"
             },
+                new ExamQuestion
+            {
+                Number = 7,
+                QuestionText = "A Student belongs to exactly one Section, while a Section can contain many students. What type of relationship is this?",
+                Choices = new Dictionary<string,string>
+                {
+                    {"A","One-to-One"},
+                    {"B","One-to-Many"},
+                    {"C","Many-to-Many"},
+                    {"D","Many-to-One only"}
+                },
+                CorrectLetter = "B - One-to-Many"
+            },
 
-        };
+
+
+
+
+
+
+          };
     }
 }
 

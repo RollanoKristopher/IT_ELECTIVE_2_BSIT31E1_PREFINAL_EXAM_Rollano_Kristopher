@@ -99,6 +99,20 @@ namespace ExamMVC.Data
                 },
                 CorrectLetter = "B - One-to-Many"
             },
+                new ExamQuestion
+                {
+                    Number = 8,
+                    QuestionText = "In the following example, what is SectionId?",
+                    CodeSnippet = "public int SectionId { get; set; }\npublic Section Section { get; set; }",
+                    Choices = new Dictionary<string,string>
+                    {
+                        {"A","Primary key of Student"},
+                        {"B","Foreign key referencing Section"},
+                        {"C","Navigation property"},
+                        {"D","Database connection string"}
+                    },
+                    CorrectLetter = "B - Foreign key referencing Section"
+                },
 
 
 

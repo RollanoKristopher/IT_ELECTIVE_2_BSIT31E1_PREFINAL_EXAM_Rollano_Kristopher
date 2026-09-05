@@ -249,7 +249,19 @@ namespace ExamMVC.Data
                 },
 
 
-
+                new ExamQuestion
+                {
+                    Number = 18,
+                    QuestionText = "Which middleware is commonly used in ASP.NET Core for centralized exception handling?",
+                    Choices = new Dictionary<string,string>
+                    {
+                        {"A","UseDatabase()"},
+                        {"B","UseExceptionHandler()"},
+                        {"C","UseValidationHandler()"},
+                        {"D","UseMvcDatabase()"}
+                    },
+                    CorrectLetter = "B - UseExceptionHandler()"
+                },
 
 
 

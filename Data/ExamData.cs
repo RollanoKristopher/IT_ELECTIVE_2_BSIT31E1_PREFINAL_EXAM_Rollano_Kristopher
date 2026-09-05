@@ -174,7 +174,19 @@ namespace ExamMVC.Data
 
 
 
-
+                new ExamQuestion
+                {
+                    Number = 13,
+                    QuestionText = "Which type of validation occurs in the browser before a request is sent to the server?",
+                    Choices = new Dictionary<string,string>
+                    {
+                        {"A","Database-level validation"},
+                        {"B","Client-side validation"},
+                        {"C","Server-side validation"},
+                        {"D","EF Core migration validation"}
+                    },
+                    CorrectLetter = "B - Client-side validation"
+                },
 
 
 

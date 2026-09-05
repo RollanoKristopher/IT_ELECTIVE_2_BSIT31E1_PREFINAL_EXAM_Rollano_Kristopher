@@ -1,17 +1,58 @@
-﻿@model List<ExamMVC.Models.ExamQuestion>
-
-<h1>Exam Answers</h1>
-
-@foreach (var q in Model)
-{
-    <div>
-        <h3>Q@(q.Number): @q.QuestionText</h3>
-        <ul>
-            @foreach (var c in q.Choices)
-            {
-                <li>@c.Key. @c.Value</li>
-            }
-        </ul>
-        <p><strong>Answer:</strong> @q.CorrectLetter. @q.CorrectAnswerText</p>
-    </div>
+﻿@model List<ExamQuestion>
+@{
+    ViewData["Title"] = "Exam Terminal";
 }
+
+<pre class="ascii">
+ _____ _______   ______ _      ______ _____ _______ _______      __ ______
+|_   _|__   __| |  ____| |    |  ____/ ____|__   __|_   _\ \    / /  ____|
+  | |    | |    | |__  | |    | |__ | |       | |    | |  \ \  / /| |__
+  | |    | |    |  __| | |    |  __|| |       | |    | |   \ \/ / |  __|
+ _| |_   | |    | |____| |____| |___| |____   | |   _| |_   \  /  | |____
+|_____|  |_|    |______|______|______\_____|  |_|  |_____|   \/   |______|
+</pre>
+
+<div class="boot">
+    BOOT SEQUENCE: OK
+    LOADING MODULE.... ASP.NET_CORE_MVC
+    LOADING MODULE.... EF_CORE_ANSWER_KEY
+    DATABASE......... NONE (in-memory List&lt;ExamQuestion&gt; -- exam requirement)
+    STATUS........... 20/20 QUESTIONS LOADED
+    > run exam --mode=review
+</div>
+
+<h1 class="term-h1">IT Elective 2 &mdash; Prefinal Exam Review</h1>
+<div class="subline">Web System and Technologies &middot; Multiple Choice Log &middot; click RUN to reveal each answer</div>
+
+<div class="log-list">
+    @foreach (var q in Model.OrderBy(x => x.Number))
+    {
+        <div class="log-entry">
+            <span class="log-tag">LOG #@q.Number.ToString("00")</span>
+            <p class="q-text">@q.QuestionText</p>
+
+            @if (!string.IsNullOrWhiteSpace(q.CodeSnippet))
+            {
+                <pre class="code-block">@q.CodeSnippet</pre>
+            }
+
+            <ul class="choices">
+                @foreach (var choice in q.Choices)
+                {
+                    <li>@choice.Key. @choice.Value</li>
+                }
+            </ul>
+
+            <button class="reveal-btn" data-target="ans-@q.Number">&gt; RUN answer.exe</button>
+
+            <div class="answer-block" id="ans-@q.Number">
+                <span class="tag-answer">ANSWER</span>
+                @q.CorrectLetter. @q.CorrectAnswerText
+            </div>
+
+            <div style="margin-top:10px;">
+                <a class="next-link" href="@Url.Action("Details", "Exam", new { id = q.Number })">&gt; open full record #@q.Number.ToString("00")</a>
+            </div>
+        </div>
+    }
+</div>

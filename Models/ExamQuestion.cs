@@ -2,7 +2,6 @@
 {
     public class ExamQuestion
     {
-
         public int Number { get; set; }
         public string QuestionText { get; set; } = "";
         public string? CodeSnippet { get; set; }
@@ -10,7 +9,4 @@
         public string CorrectLetter { get; set; } = "";
         public string CorrectAnswerText => Choices.TryGetValue(CorrectLetter, out var v) ? v : "";
     }
-} 
-
-
- 
+}

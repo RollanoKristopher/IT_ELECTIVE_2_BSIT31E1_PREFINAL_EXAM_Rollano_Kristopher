@@ -1,5 +1,6 @@
 ﻿using ExamMVC.Models;
 
+
 namespace ExamMVC.Data
 {
     public static class ExamData
@@ -290,30 +291,7 @@ namespace ExamMVC.Data
                         {"D","Razor syntax"}
                     },
                     CorrectLetter = "A - Data integrity"
-                },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                }
 
           };
     }

@@ -1,0 +1,36 @@
+﻿@model ExamQuestion
+@{
+    ViewData["Title"] = $"Record #{Model.Number}";
+}
+
+<div class="detail-card">
+    <span class="log-tag">RECORD #@Model.Number.ToString("00")</span>
+    <p class="q-text">@Model.QuestionText</p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.CodeSnippet))
+    {
+        <pre class="code-block">@Model.CodeSnippet</pre>
+    }
+
+    <ul class="choices">
+        @foreach (var choice in Model.Choices)
+        {
+            <li class="@(choice.Key == Model.CorrectLetter ? "correct-choice" : "")">@choice.Key. @choice.Value</li>
+        }
+    </ul>
+
+    <div class="answer-block show">
+        <span class="tag-answer">ANSWER</span>
+        @Model.CorrectLetter. @Model.CorrectAnswerText
+    </div>
+</div>
+
+<a class="back-link" href="@Url.Action("Index", "Home")">&lt; back to full log</a>
+@if (Model.Number > 1)
+{
+    <a class="next-link" href="@Url.Action("Details", "Exam", new { id = Model.Number - 1 })">&lt; prev</a>
+}
+@if (Model.Number < 20)
+{
+    <a class="next-link" href="@Url.Action("Details", "Exam", new { id = Model.Number + 1 })">next &gt;</a>
+}

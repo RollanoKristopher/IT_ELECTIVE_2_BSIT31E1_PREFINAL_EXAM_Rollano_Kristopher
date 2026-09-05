@@ -188,7 +188,19 @@ namespace ExamMVC.Data
                     CorrectLetter = "B - Client-side validation"
                 },
 
-
+                new ExamQuestion
+                {
+                    Number = 14,
+                    QuestionText = "Why is server-side validation still necessary if client-side validation exists?",
+                    Choices = new Dictionary<string,string>
+                    {
+                        {"A","Client-side validation can be bypassed"},
+                        {"B","Client-side validation automatically modifies the database"},
+                        {"C","Server-side validation only works with SQLite"},
+                        {"D","Client-side validation cannot display messages"}
+                    },
+                    CorrectLetter = "A - Client-side validation can be bypassed "
+                },
 
 
 

@@ -202,7 +202,19 @@ namespace ExamMVC.Data
                     CorrectLetter = "A - Client-side validation can be bypassed "
                 },
 
-
+                new ExamQuestion
+                {
+                    Number = 15,
+                    QuestionText = "A school requires every student to have a unique Student Number. Which rule best represents this requirement?",
+                    Choices = new Dictionary<string,string>
+                    {
+                        {"A","Student Number should always be nullable"},
+                        {"B","Student Number should be unique"},
+                        {"C","Student Number should always be the same"},
+                        {"D","Student Number should contain only spaces"}
+                    },
+                    CorrectLetter = "B - Student Number should be unique"
+                },
 
 
 

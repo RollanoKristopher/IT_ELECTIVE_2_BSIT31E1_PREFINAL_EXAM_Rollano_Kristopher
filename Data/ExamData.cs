@@ -157,7 +157,20 @@ namespace ExamMVC.Data
                     CorrectLetter = "B - To combine or shape the data specifically needed by the view"
                 },
 
-
+                new ExamQuestion
+                {
+                    Number = 12,
+                    QuestionText = "Consider this query. What is the main benefit of Include(s => s.Section)?",
+                    CodeSnippet = "var students = _context.Students.Include(s => s.Section).ToList();",
+                    Choices = new Dictionary<string,string>
+                    {
+                        {"A","It loads the related Section navigation property"},
+                        {"B","It creates a Section object manually"},
+                        {"C","It removes the foreign key"},
+                        {"D","It prevents the query from accessing the database"}
+                    },
+                    CorrectLetter = "A - It loads the related Section navigation property   "
+                },
 
 
 

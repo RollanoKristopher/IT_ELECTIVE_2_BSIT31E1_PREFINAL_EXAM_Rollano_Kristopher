@@ -129,7 +129,19 @@ namespace ExamMVC.Data
                     CorrectLetter = "B - It represents a relationship to another entity"
                 },
 
-
+                new ExamQuestion
+                {
+                    Number = 10,
+                    QuestionText = "What does .Include() generally allow EF Core to do?",
+                    Choices = new Dictionary<string,string>
+                    {
+                        {"A","Delete the Section table"},
+                        {"B","Load related Section data together with Students"},
+                        {"C","Create a new Student"},
+                        {"D","Validate Student input"}
+                    },
+                    CorrectLetter = "B - Load related Section data together with Students"
+                },
 
 
           };

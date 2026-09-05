@@ -1,6 +1,7 @@
-using System.Diagnostics;
+using ExamMVC.Data;
 using ExamMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace ExamMVC.Controllers
 {
@@ -15,7 +16,7 @@ namespace ExamMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(ExamData.Questions);
         }
 
         public IActionResult Privacy()

@@ -17,8 +17,23 @@ namespace ExamMVC.Data
                     {"C","It allows data to persist after the application stops"},
                     {"D","It removes the need for MVC"}
                 },
-                CorrectLetter = "C"
-            }
+                CorrectLetter = "C - It allows data to persist after the application stops"
+            },
+          new ExamQuestion
+          {
+            Number = 2,
+            QuestionText = "Which approach is being used when an existing database is used to generate EF Core entity classes?",
+            Choices = new Dictionary<string,string>
+            {
+                {"A","Code-First"},
+                {"B","Database-First"},
+                {"C","Model-First"},
+                {"D","Controller-First"}
+            },
+            CorrectLetter = "B - Database-First"
+          }
         };
     }
 }
+
+

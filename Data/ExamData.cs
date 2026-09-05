@@ -73,7 +73,19 @@ namespace ExamMVC.Data
                 CorrectLetter = "C - Generates EF Core models and a DbContext from an existing database"
             },
 
-
+                new ExamQuestion
+            {
+                Number = 6,
+                QuestionText = "Where is a database connection string commonly stored in an ASP.NET Core MVC application?",
+                Choices = new Dictionary<string,string>
+                {
+                    {"A","Program.cs only"},
+                    {"B","appsettings.json"},
+                    {"C","Index.cshtml"},
+                    {"D","Student.cs"}
+                },
+                CorrectLetter = "B - appsettings.json"
+            },
 
         };
     }

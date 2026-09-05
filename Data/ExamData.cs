@@ -45,7 +45,19 @@ namespace ExamMVC.Data
                 },
                 CorrectLetter = "C - To map objects in code to relational database data"
             },
-
+          new ExamQuestion
+{
+                Number = 4,
+                QuestionText = "Which EF Core component is primarily responsible for communicating with the database?",
+                Choices = new Dictionary<string,string>
+                {
+                    {"A","DbContext"},
+                    {"B","DbSetView"},
+                    {"C","ControllerContext"},
+                    {"D","RazorContext"}
+                },
+                CorrectLetter = "A - DbContext"
+            },
 
 
 
